@@ -17,7 +17,6 @@ class RFID {
         RFID(HardwareSerial *serial_port);
         unsigned long get_code();
         bool find_available_packet();
-        void flush_buffer();
         
     private:
         HardwareSerial *_hard_serial;   // Serial port to read RFID tag code from.

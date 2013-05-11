@@ -1,11 +1,12 @@
 /*  Electronic Brick RFID Reader
  *  
- *  This files contains the library for accessing the Electronic Brick RFID
- *  Reader via the Arduino serial interface.
+ *  This files contains the library for accessing the Electronic Brick RFID Reader via the
+ *  Arduino serial interface.
  *
  *  Revision History:
  *      04/27/13    Steven Okai     Initial revision.
  *      04/29/13    Kevin Lo        Added functionality to search for start of packet.
+ *      05/10/13    Steven Okai     Removed unused function (flush_buffer).
  *
  */
  
@@ -74,9 +75,9 @@ unsigned long RFID::get_code() {
 
 /*  find_available_packet
  *  
- *  Description:    This function returns true if there is at least 1 RFID tag
- *                  code available, and false otherwise.  If the first byte in the rx
- *                  buffer is not the start flag, it will remove it.
+ *  Description:    This function returns true if there is at least 1 RFID tag code
+ *                  available, and false otherwise.  If the first byte in the rx buffer is
+ *                  not the start flag, it will remove it.
  *
  *  Arguments:      RFID - RFID device to read from.
  *  Return Value:   Whether there is an RFID tag code available (bool)
@@ -103,8 +104,4 @@ bool RFID::find_available_packet() {
     }
     
     return false;
-}
-
-void RFID::flush_buffer() {
-    // Flush the buffer
 }
